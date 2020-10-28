@@ -9,6 +9,8 @@ import {
   HttpLink,
 } from "@apollo/client";
 
+import { offsetLimitPagination } from "@apollo/client/utilities";
+
 const link = new HttpLink({
   uri: "https://swapi-graphql.netlify.app/.netlify/functions/index",
 });

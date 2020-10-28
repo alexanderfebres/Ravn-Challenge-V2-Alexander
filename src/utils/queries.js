@@ -9,8 +9,6 @@ export const ALL_PEOPLE = gql`
       people {
         id
         name
-        gender
-        height
         birthYear
         homeworld {
           name

@@ -10,14 +10,14 @@ This project also takes advantage of semantic ui react to make everything look c
 three main components (CharacterList.js, CharacterDetails.js and the Layout.js).
 All of this along side React make up this amazing web aplication for Star Wars lovers.
 
-# DEVELOPMENT WORK FLOW 
+# WORK FLOW 
 
-# FOR DEVELOPMENT
+- FOR DEVELOPMENT
 
 npm install
 npm start 
 
-# FOR DEPLYOMENT
+- FOR DEPLYOMENT
 
 npm run build
 

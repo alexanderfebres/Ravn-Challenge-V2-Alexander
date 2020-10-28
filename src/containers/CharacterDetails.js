@@ -3,16 +3,9 @@ import React, { Fragment } from "react";
 import { useQuery } from "@apollo/client";
 import { PERSON_DETAILS } from "../utils/queries";
 
-import {
-  Item,
-  Divider,
-  Message,
-  Segment,
-  Dimmer,
-  Loader,
-  Grid,
-  Header,
-} from "semantic-ui-react";
+import Loading from "./components/Loading";
+
+import { Item, Message, Grid, Header } from "semantic-ui-react";
 
 const CharacterDetails = (props) => {
   const id = props.match.params.characterID;
@@ -28,14 +21,8 @@ const CharacterDetails = (props) => {
         content={JSON.stringify(error)}
       />
     );
-  if (loading)
-    return (
-      <Segment>
-        <Dimmer active inverted>
-          <Loader inverted>Loading</Loader>
-        </Dimmer>
-      </Segment>
-    );
+    
+  if (loading) return <Loading />;
 
   return (
     <Fragment>

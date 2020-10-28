@@ -6,19 +6,14 @@ import { useQuery } from "@apollo/client";
 import { characterDetailsURL } from "../utils/urls";
 import { ALL_PEOPLE } from "../utils/queries";
 
-import {
-  Button,
-  Card,
-  Image,
-  Message,
-  Segment,
-  Dimmer,
-  Loader,
-} from "semantic-ui-react";
+import Loading from "./components/Loading";
+
+import { Button, Card, Message } from "semantic-ui-react";
 
 const CharacterList = () => {
   const { loading, error, data, fetchMore } = useQuery(ALL_PEOPLE, {
-    variables: { after: null },
+    variables: {
+      after: null},
     notifyOnNetworkStatusChange: true,
   });
   if (error)
@@ -29,15 +24,7 @@ const CharacterList = () => {
         content={JSON.stringify(error)}
       />
     );
-  if (loading)
-    return (
-      <Segment>
-        <Dimmer active inverted>
-          <Loader inverted>Loading</Loader>
-        </Dimmer>
-        <Image src="/images/wireframe/short-paragraph.png" />
-      </Segment>
-    );
+  if (loading) return <Loading />;
 
   return (
     <Fragment>
